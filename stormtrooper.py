@@ -24,7 +24,7 @@ def home():
         author_first_profile = first.find('span', class_="post-meta-author").a["href"]
         print(headline_first)
         print(link_first)
-        csv_writer.writerow([headline_first, link_first, author_first, author_first_profile])
+        csv_writer.writerow([headline_first, link_first, author_first, author_first_profile,])
     featured()
 
 
@@ -39,7 +39,7 @@ def home():
         print(author_other_profile)
         print()
 
-        csv_writer.writerow([headline_other, link_other, author_other, author_other_profile])
+        csv_writer.writerow([headline_other, link_other, author_other, author_other_profile, article_date])
     csv_file.close()
 #option2
 def world():
