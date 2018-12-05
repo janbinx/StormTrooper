@@ -13,7 +13,7 @@ def home():
     csv_file = open('home.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
 
     first = soup.find('li', class_="first-news")
 
@@ -24,7 +24,7 @@ def home():
         author_first_profile = first.find('span', class_="post-meta-author").a["href"]
         print(headline_first)
         print(link_first)
-        csv_writer.writerow([headline_first, link_first, author_first, author_first_profile,])
+        csv_writer.writerow([headline_first, link_first, author_first, author_first_profile])
     featured()
 
 
@@ -39,7 +39,7 @@ def home():
         print(author_other_profile)
         print()
 
-        csv_writer.writerow([headline_other, link_other, author_other, author_other_profile, article_date])
+        csv_writer.writerow([headline_other, link_other, author_other, author_other_profile,])
     csv_file.close()
 #option2
 def world():
@@ -50,7 +50,7 @@ def world():
     csv_file = open('world.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
     for article in soup.find_all('article', class_="item-list"):
         headline_article = article.h2.a.text
@@ -76,7 +76,7 @@ def us():
     csv_file = open('us.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
     for article in soup.find_all('article', class_="item-list"):
         headline_article = article.h2.a.text
@@ -102,7 +102,7 @@ def jew():
     csv_file = open('jewishproblem.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
     for article in soup.find_all('article', class_="item-list"):
         headline_article = article.h2.a.text
@@ -128,7 +128,7 @@ def race():
     csv_file = open('racewar.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
     for article in soup.find_all('article', class_="item-list"):
         headline_article = article.h2.a.text
@@ -154,7 +154,7 @@ def society():
     csv_file = open('society.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile','Date'])
 
     for article in soup.find_all('article', class_="item-list"):
         headline_article = article.h2.a.text
@@ -180,7 +180,7 @@ def insight():
     csv_file = open('insight.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
     for article in soup.find_all('article', class_="item-list"):
         headline_article = article.h2.a.text
