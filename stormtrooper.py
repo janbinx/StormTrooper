@@ -62,5 +62,3 @@ print (Fore.BLUE + '[1] Scrape the home page of DailyStormer.name')
 input = input()
 if input == "1":
     stormtrooper()
-elif input != "1":
-    engage()
