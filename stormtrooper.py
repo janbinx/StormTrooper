@@ -13,7 +13,7 @@ def home():
     csv_file = open('home.csv', 'w')
 
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
+    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
     first = soup.find('li', class_="first-news")
 
