@@ -57,13 +57,15 @@ def world():
         link_article = article.a["href"]
         author_article = article.find('span', class_="post-meta-author").a.text
         author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+        article_date = article.find('span', class_="tie-date").text
         print(headline_article)
         print(link_article)
         print(author_article)
         print(author_article_profile)
+        print(article_date)
         print()
 
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile])
+        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile,article_date])
     csv_file.close()
 
 def us():
@@ -81,13 +83,15 @@ def us():
         link_article = article.a["href"]
         author_article = article.find('span', class_="post-meta-author").a.text
         author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+        article_date = article.find('span', class_="tie-date").text
         print(headline_article)
         print(link_article)
         print(author_article)
         print(author_article_profile)
+        print(article_date)
         print()
 
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile])
+        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
     csv_file.close()
 
 def jew():
@@ -105,13 +109,15 @@ def jew():
         link_article = article.a["href"]
         author_article = article.find('span', class_="post-meta-author").a.text
         author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+        article_date = article.find('span', class_="tie-date").text
         print(headline_article)
         print(link_article)
         print(author_article)
         print(author_article_profile)
+        print(article_date)
         print()
 
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile])
+        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
     csv_file.close()
 
 def race():
@@ -129,13 +135,15 @@ def race():
         link_article = article.a["href"]
         author_article = article.find('span', class_="post-meta-author").a.text
         author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+        article_date = article.find('span', class_="tie-date").text
         print(headline_article)
         print(link_article)
         print(author_article)
         print(author_article_profile)
+        print(article_date)
         print()
 
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile])
+        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
     csv_file.close()
 
 def society():
@@ -153,13 +161,15 @@ def society():
         link_article = article.a["href"]
         author_article = article.find('span', class_="post-meta-author").a.text
         author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+        article_date = article.find('span', class_="tie-date").text
         print(headline_article)
         print(link_article)
         print(author_article)
         print(author_article_profile)
+        print(article_date)
         print()
 
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile])
+        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
     csv_file.close()
 
 def insight():
@@ -177,13 +187,15 @@ def insight():
         link_article = article.a["href"]
         author_article = article.find('span', class_="post-meta-author").a.text
         author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+        article_date = article.find('span', class_="tie-date").text
         print(headline_article)
         print(link_article)
         print(author_article)
         print(author_article_profile)
+        print(article_date)
         print()
 
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile])
+        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
     csv_file.close()
 
 #engage dashboard
