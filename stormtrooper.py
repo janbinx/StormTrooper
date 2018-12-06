@@ -198,6 +198,15 @@ def insight():
         csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
     csv_file.close()
 
+def bearjew():
+    home()
+    world()
+    us()
+    jew()
+    race()
+    society()
+    insight()
+
 #engage dashboard
 def menu():
     print(Fore.BLUE + """       _____ _                    _______
@@ -220,7 +229,8 @@ def menu():
     print(Fore.YELLOW + '    [5]' + Fore.BLUE + ' Scrape the Race War page of DailyStormer.name')
     print(Fore.YELLOW + '    [6]' + Fore.BLUE + ' Scrape the Society page of DailyStormer.name')
     print(Fore.YELLOW + '    [7]' + Fore.BLUE + ' Scrape the Insight page of DailyStormer.name')
-    print(Fore.YELLOW + '    [8]' + Fore.BLUE + ' Exit')
+    print(Fore.YELLOW + '    [11]' + Fore.BLUE + ' Unleash the Bear Jew')
+    print(Fore.YELLOW + '    [0]' + Fore.BLUE + ' Exit')
 menu()
 input = int(input())
 def engage():
@@ -238,7 +248,9 @@ def engage():
         society()
     elif input == 7:
         insight()
-    elif input == 8:
+    elif input == 11:
+        bearjew()
+    elif input == 0:
         exit()
 engage()
 
