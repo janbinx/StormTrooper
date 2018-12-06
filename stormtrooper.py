@@ -4,208 +4,85 @@ import csv
 from colorama import init, Fore, Back, Style
 init(autoreset=True)
 
-#option1
-def home():
-    source = requests.get('http://dailystormer.name').text
+def get_subsection(subsection):
+    csv_file_name = '{}.csv'.format(subsection)
+    with open(csv_file_name, 'w', newline='') as csv_file: # with statement handles both open and close
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
 
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('home.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile'])
-
-    first = soup.find('li', class_="first-news")
-
-    def featured():
-        headline_first = first.h2.a.text
-        link_first = first.a["href"]
-        author_first = first.find('span', class_="post-meta-author").a.text
-        author_first_profile = first.find('span', class_="post-meta-author").a["href"]
-        print(headline_first)
-        print(link_first)
-        csv_writer.writerow([headline_first, link_first, author_first, author_first_profile])
-    featured()
-
-
-    for other in soup.find_all('li', class_="other-news"):
-        headline_other = other.h3.a.text
-        link_other = other.a["href"]
-        author_other = other.find('span', class_="post-meta-author").a.text
-        author_other_profile = other.find('span', class_="post-meta-author").a["href"]
-        print(headline_other)
-        print(link_other)
-        print(author_other)
-        print(author_other_profile)
-        print()
-
-        csv_writer.writerow([headline_other, link_other, author_other, author_other_profile,])
-    csv_file.close()
-#option2
-def world():
-    source = requests.get('https://dailystormer.name/section/world/').text
-
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('world.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
-
-    for article in soup.find_all('article', class_="item-list"):
-        headline_article = article.h2.a.text
-        link_article = article.a["href"]
-        author_article = article.find('span', class_="post-meta-author").a.text
-        author_article_profile = article.find('span', class_="post-meta-author").a["href"]
-        article_date = article.find('span', class_="tie-date").text
-        print(headline_article)
-        print(link_article)
-        print(author_article)
-        print(author_article_profile)
-        print(article_date)
-        print()
-
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile,article_date])
-    csv_file.close()
-
-def us():
-    source = requests.get('https://dailystormer.name/section/us/').text
-
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('us.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
-
-    for article in soup.find_all('article', class_="item-list"):
-        headline_article = article.h2.a.text
-        link_article = article.a["href"]
-        author_article = article.find('span', class_="post-meta-author").a.text
-        author_article_profile = article.find('span', class_="post-meta-author").a["href"]
-        article_date = article.find('span', class_="tie-date").text
-        print(headline_article)
-        print(link_article)
-        print(author_article)
-        print(author_article_profile)
-        print(article_date)
-        print()
-
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
-    csv_file.close()
-
-def jew():
-    source = requests.get('https://dailystormer.name/section/jewish-problem/').text
-
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('jewishproblem.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
-
-    for article in soup.find_all('article', class_="item-list"):
-        headline_article = article.h2.a.text
-        link_article = article.a["href"]
-        author_article = article.find('span', class_="post-meta-author").a.text
-        author_article_profile = article.find('span', class_="post-meta-author").a["href"]
-        article_date = article.find('span', class_="tie-date").text
-        print(headline_article)
-        print(link_article)
-        print(author_article)
-        print(author_article_profile)
-        print(article_date)
-        print()
-
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
-    csv_file.close()
-
-def race():
-    source = requests.get('https://dailystormer.name/section/race-war/').text
-
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('racewar.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
-
-    for article in soup.find_all('article', class_="item-list"):
-        headline_article = article.h2.a.text
-        link_article = article.a["href"]
-        author_article = article.find('span', class_="post-meta-author").a.text
-        author_article_profile = article.find('span', class_="post-meta-author").a["href"]
-        article_date = article.find('span', class_="tie-date").text
-        print(headline_article)
-        print(link_article)
-        print(author_article)
-        print(author_article_profile)
-        print(article_date)
-        print()
-
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
-    csv_file.close()
-
-def society():
-    source = requests.get('https://dailystormer.name/section/society/').text
-
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('society.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile','Date'])
-
-    for article in soup.find_all('article', class_="item-list"):
-        headline_article = article.h2.a.text
-        link_article = article.a["href"]
-        author_article = article.find('span', class_="post-meta-author").a.text
-        author_article_profile = article.find('span', class_="post-meta-author").a["href"]
-        article_date = article.find('span', class_="tie-date").text
-        print(headline_article)
-        print(link_article)
-        print(author_article)
-        print(author_article_profile)
-        print(article_date)
-        print()
-
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
-    csv_file.close()
-
-def insight():
-    source = requests.get('https://dailystormer.name/section/insight/').text
-
-    soup = BeautifulSoup(source, 'lxml')
-
-    csv_file = open('insight.csv', 'w')
-
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Post Title', 'Post Link', 'Author', 'Author Profile', 'Date'])
-
-    for article in soup.find_all('article', class_="item-list"):
-        headline_article = article.h2.a.text
-        link_article = article.a["href"]
-        author_article = article.find('span', class_="post-meta-author").a.text
-        author_article_profile = article.find('span', class_="post-meta-author").a["href"]
-        article_date = article.find('span', class_="tie-date").text
-        print(headline_article)
-        print(link_article)
-        print(author_article)
-        print(author_article_profile)
-        print(article_date)
-        print()
-
-        csv_writer.writerow([headline_article, link_article, author_article, author_article_profile, article_date])
-    csv_file.close()
-
+        if subsection == "home": # one url for the home section
+            url = 'http://dailystormer.name'
+        else: # another one for all subsections
+            url = 'https://dailystormer.name/section/{}/'.format(subsection)
+        
+        # set header - else you're posing as python/requests, which is not very stealth...
+        header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'}
+        r = requests.get(url, headers=header)
+        source = r.content.decode('utf-8') # using .text causes my machine to decode using cp1252, which is wrong
+        soup = BeautifulSoup(source, 'lxml')
+        
+        # home has a row that Jake wants - this doesn't appear in the others sections
+        if subsection == "home":
+            first = soup.find('li', class_="first-news")
+            headline_first = first.h2.a.text
+            link_first = first.a["href"]
+            author_first = first.find('span', class_="post-meta-author").a.text
+            author_first_profile = first.find('span', class_="post-meta-author").a["href"]
+            print(headline_first)
+            print(link_first)
+            csv_writer.writerow([headline_first, link_first, author_first, author_first_profile])        
+            # home has articles in 'other-news'-class
+            articles = soup.find_all('li', class_="other-news")
+        
+        else: # all other subsections has atciles in 'item-list'
+            articles = soup.find_all('article', class_="item-list")
+    
+        for article in articles:
+            if subsection == "home": # home has the headline in h2
+                headline_article = article.h3.a.text
+            else:
+                headline_article = article.h2.a.text # all other subsections has headline in h2
+            link_article = article.a["href"]
+            author_article = article.find('span', class_="post-meta-author").a.text
+            author_article_profile = article.find('span', class_="post-meta-author").a["href"]
+            try:
+                article_date = article.find('span', class_="tie-date").text
+            except: # these are not present in the home-subsection
+                article_date = None
+            print(headline_article)
+            print(link_article)
+            print(author_article)
+            print(author_article_profile)
+            print(article_date)
+            print()
+            csv_writer.writerow([headline_article, link_article, author_article, author_article_profile,article_date])
+            
 def bearjew():
-    home()
-    world()
-    us()
-    jew()
-    race()
-    society()
-    insight()
+    subsections = ['home', 'world', 'us', 'jewish-problem', 'race-war', 'society', 'insigth']
+    for subsection in subsections:
+        get_subsection(subsection)
+    return None
+
+
+def engage():
+    if input == 1:
+        get_subsection('home')
+    elif input == 2:
+        get_subsection('world')
+    elif input == 3:
+        get_subsection('us')
+    elif input == 4:
+        get_subsection('jewish-problem')
+    elif input == 5:
+        get_subsection('race-war')
+    elif input == 6:
+        get_articles('society')
+    elif input == 7:
+        get_articles('insigth')
+    elif input == 11:
+        bearjew()
+    elif input == 0:
+        exit()
 
 #engage dashboard
 def menu():
@@ -231,28 +108,9 @@ def menu():
     print(Fore.YELLOW + '    [7]' + Fore.BLUE + ' Scrape the Insight page of DailyStormer.name')
     print(Fore.YELLOW + '    [11]' + Fore.BLUE + ' Unleash the Bear Jew')
     print(Fore.YELLOW + '    [0]' + Fore.BLUE + ' Exit')
+
 menu()
 input = int(input())
-def engage():
-    if input == 1:
-        home()
-    elif input == 2:
-        world()
-    elif input == 3:
-        us()
-    elif input == 4:
-        jew()
-    elif input == 5:
-        race()
-    elif input == 6:
-        society()
-    elif input == 7:
-        insight()
-    elif input == 11:
-        bearjew()
-    elif input == 0:
-        exit()
 engage()
-
 print(Fore.BLUE + 'Thanks for hunting Nazis with StormTrooper! Follow me on Twitter @jakecreps.')
 print()
